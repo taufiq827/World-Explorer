@@ -1,0 +1,268 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(to bottom right, #a1c4fd, #c2e9fb);
+  color: #333;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* Container for sidebar and main content */
+.container {
+  display: flex;
+  width: 100%;
+}
+
+/* Sidebar styling */
+.sidebar {
+  background-color: #2a3b4c;
+  color: #f6f6f6;
+  width: 350px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.sidebar h1 {
+  font-size: 3.0rem;
+  font-weight: 600;
+  margin-bottom: 50px;
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.sidebar nav ul li {
+  margin: 15px 0;
+  position: relative;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.sidebar nav ul li a {
+  text-decoration: none;
+  color: #27a2d7;
+  font-size: 2rem;
+  padding: 10px 20px;
+  display: block;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Hover effect - Option 1: Slide effect */
+.sidebar nav ul li a::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #27a2d7, #4db5e6);
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.sidebar nav ul li a:hover {
+  color: #ffffff;
+}
+
+.sidebar nav ul li a:hover::before {
+  left: 0;
+}
+
+/* Active state for current page */
+.sidebar nav ul li a.active {
+  background: #27a2d7;
+  color: #ffffff;
+}
+
+/* Main content styling */
+.main-content {
+  flex: 1;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Country search section */
+#country-info {
+  width: 100%;
+  max-width: 800px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  text-align: center;
+}
+
+#country-input {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px;
+  margin: 15px auto;
+  font-size: 1.4rem;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  width: 100%;
+  max-width: 500px;
+  padding: 12px;
+  margin: 0 auto;
+  font-size: 1.4rem;
+  background-color: #0288d1;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  display: block;
+}
+
+button:hover {
+  background-color: #0277bd;
+  transform: translateY(-2px);
+}
+
+/* Country details container */
+.country-container {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.main-country-info {
+  flex: 3;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 1.1rem;
+}
+
+#country-details {
+  flex: 2;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-size: 1.3rem;
+}
+
+#country-details h3 {
+  font-size: 2.0rem;
+  color: #0288d1;
+  margin-bottom: 10px;
+  display: inline;
+  vertical-align: middle;
+}
+
+/* Nearby countries styling */
+.nearby-countries {
+  flex: 1;
+  padding: 15px;
+  background-color: #f9f9f9;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  min-width: 200px;
+  max-width: 250px;
+}
+
+.nearby-countries h4 {
+  color: #2a3b4c;
+  margin-bottom: 15px;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.nearby-countries ul {
+  list-style: none;
+  padding: 0;
+}
+
+.nearby-countries li {
+  padding: 8px 10px;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  background-color: #ffffff;
+  font-size: 0.9rem;
+}
+
+.nearby-countries li:hover {
+  background-color: #e3f2fd;
+  transform: translateX(5px);
+}
+
+.nearby-countries li img {
+  width: 25px;
+  height: 15px;
+  margin-right: 8px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  #country-info {
+    max-width: 800px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+
+  #country-info {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .country-container {
+    flex-direction: column;
+  }
+
+  .nearby-countries {
+    max-width: 100%;
+  }
+
+  button, #country-input {
+    font-size: 0.9rem;
+    max-width: 100%;
+  }
+}
+
+/* Loading animation */
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.loading {
+  animation: pulse 1.5s infinite;
+}
+

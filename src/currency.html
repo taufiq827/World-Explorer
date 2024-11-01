@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Currency Exchange Rate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="currency.css">
+
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h1>WORLD EXPLORER</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Explorer</a></li>
+                    <li><a href="currency.html" class="active">Currency Rate</a></li>
+                    <li><a href="itineraries.html">Itineraries</a></li>
+                </ul>
+            </nav>
+        </aside>
+        <main class="main-content">
+            <section id="country-info">
+                <h2>Currency Rate</h2>
+                <input type="text" id="country-input" placeholder="Enter country name" />
+                <button onclick="fetchCountryAndExchangeRate()">Get Currency Rate</button>
+                <div id="country-details"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="currency.js"></script>
+</body>
+</html>

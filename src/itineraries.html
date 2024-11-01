@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Explorer - Itineraries</title>
+    <link rel="stylesheet" href="itineraries.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h1>WORLD EXPLORER</h1>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Explorer</a></li>
+                    <li><a href="currency.html">Currency Rate</a></li>
+                    <li><a href="itineraries.html" class="active">Itineraries</a></li>
+                </ul>
+            </nav>
+        </aside>
+        
+        <main class="main-content">
+            <section id="file-manager">
+                <h2>Your Itineraries</h2>
+                <div class="file-form">
+                    <div class="form-group">
+                        <label>Country Name</label>
+                        <input id="countryName" type="text" class="form-control" placeholder="Enter country name...">
+                    </div>
+
+                    <div class="form-group">
+                        <label>Your Notes</label>
+                        <textarea id="userNotes" class="form-control" rows="5" placeholder="Add your travel notes..."></textarea>
+                    </div>
+
+                    <div class="button-group">
+                        <button id="btnSave" class="action-btn">Save Notes</button>
+                        <button id="btnView" class="action-btn">View Notes</button>
+                        <button id="btnDelete" class="action-btn">Delete Notes</button>
+                    </div>
+                </div>
+            </section>
+
+            <section id="saved-notes">
+                <h2>Saved Notes</h2>
+                <div id="notesList" class="notes-grid"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="itineraries.js"></script>
+</body>
+</html>
